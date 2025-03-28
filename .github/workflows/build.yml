@@ -197,8 +197,10 @@ jobs:
     permissions:
       # actions/checkout needs this to fetch code
       contents: read
-    runs-on: |
-      ubuntu-${{ startsWith(matrix.architecture, 'arm') && '24.04-arm' || 'latest' }}
+    # This line is long, but if I use a block style indicator then GH
+    # Actions doesn't parse and execute the expression.
+    # yamllint disable-line rule:line-length
+    runs-on: ubuntu-${{ startsWith(matrix.architecture, 'arm') && '24.04-arm' || 'latest' }}
     strategy:
       fail-fast: false
       matrix:
