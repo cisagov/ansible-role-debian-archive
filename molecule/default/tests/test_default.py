@@ -4,7 +4,6 @@
 import os
 
 # Third-Party Libraries
-import pytest
 import testinfra.utils.ansible_runner
 
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
@@ -12,7 +11,22 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-@pytest.mark.parametrize("x", [True])
-def test_packages(host, x):
-    """Run a dummy test, just to show what one would look like."""
-    assert x
+def test_archive(host):
+    """Verify that the archive package repositories were added."""
+    distribution = host.system_info.distribution
+    codename = host.system_info.codename
+
+    supported_distributions = ["debian"]
+    # List any unsupported releases here
+    supported_releases = ["buster"]
+
+    # The archive package repos should be present for any Debian release
+    # found in supported_releases.
+    if distribution in supported_distributions:
+        cmd = host.run("apt update")
+        assert cmd.rc == 0
+
+        if codename in supported_releases:
+            assert f"archive.debian.org/debian {codename}" in cmd.stdout
+        else:
+            assert f"archive.debian.org/debian {codename}" not in cmd.stdout

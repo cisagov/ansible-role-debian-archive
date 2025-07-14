@@ -38,6 +38,13 @@
         'degraded' in systemctl_status.stdout
       when: ansible_service_mgr == "systemd"
 
+- name: Include ansible-role-debian-archive
+  hosts: all
+  tasks:
+    - name: Include ansible-role-debian-archive
+      ansible.builtin.include_role:
+        name: ansible-role-debian-archive
+
 - name: Import upgrade playbook
   ansible.builtin.import_playbook: upgrade.yml
 

@@ -1,7 +1,4 @@
 ---
 - name: Converge
   hosts: all
-  tasks:
-    - name: Include ansible-role-debian-archive
-      ansible.builtin.include_role:
-        name: ansible-role-debian-archive
+  tasks: []
