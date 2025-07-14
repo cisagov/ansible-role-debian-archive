@@ -1,0 +1,8 @@
+---
+source_list_entries:
+  - deb http://archive.debian.org/debian %s main
+  - deb http://archive.debian.org/debian %s-updates main
+
+# The Debian releases for which we must use archive repositories
+supported_releases:
+  - buster
