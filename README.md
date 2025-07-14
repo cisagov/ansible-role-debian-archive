@@ -1,7 +1,7 @@
-# skeleton-ansible-role #
+# ansible-role-debian-archive #
 
-[![GitHub Build Status](https://github.com/cisagov/skeleton-ansible-role/workflows/build/badge.svg)](https://github.com/cisagov/skeleton-ansible-role/actions)
-[![CodeQL](https://github.com/cisagov/skeleton-ansible-role/workflows/CodeQL/badge.svg)](https://github.com/cisagov/skeleton-ansible-role/actions/workflows/codeql-analysis.yml)
+[![GitHub Build Status](https://github.com/cisagov/ansible-role-debian-archive/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-debian-archive/actions)
+[![CodeQL](https://github.com/cisagov/ansible-role-debian-archive/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-debian-archive/actions/workflows/codeql-analysis.yml)
 
 This is a skeleton project that can be used to quickly get a new
 [cisagov](https://github.com/cisagov) Ansible role GitHub project
@@ -43,7 +43,7 @@ where `requirements.yml` looks like:
 ```yaml
 ---
 - name: skeleton
-  src: https://github.com/cisagov/skeleton-ansible-role
+  src: https://github.com/cisagov/ansible-role-debian-archive
 ```
 
 and may contain other roles as well.
