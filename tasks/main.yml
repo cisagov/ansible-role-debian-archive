@@ -22,7 +22,7 @@
   block:
     - name: Remove non-archive repositories
       ansible.builtin.file:
-        path: /etc/apt/sources.list
+        path: "{{ item }}"
         state: absent
       loop:
         - /etc/apt/sources.list
