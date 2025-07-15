@@ -50,11 +50,18 @@
               - main
             name: archive
             signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
-            suites:
-              - "{{ ansible_distribution_release }}"
-              - "{{ ansible_distribution_release }}-updates"
-            uris:
-              - http://archive.debian.org/debian
+            suites: "{{ item.suites }}"
+            uris: "{{ item.uris }}"
+          loop:
+            - uris:
+                - http://archive.debian.org/debian
+              suites:
+                - "{{ ansible_distribution_release }}"
+                - "{{ ansible_distribution_release }}-updates"
+            - uris:
+                - http://archive.debian.org/debian-security
+              suites:
+                - "{{ ansible_distribution_release }}/updates"
           register: add_archive_repos
 
         - name: Update the package cache
