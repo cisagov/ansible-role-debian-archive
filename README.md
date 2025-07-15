@@ -3,13 +3,16 @@
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-debian-archive/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-debian-archive/actions)
 [![CodeQL](https://github.com/cisagov/ansible-role-debian-archive/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-debian-archive/actions/workflows/codeql-analysis.yml)
 
-This is a skeleton project that can be used to quickly get a new
-[cisagov](https://github.com/cisagov) Ansible role GitHub project
-started.  This skeleton project contains
-[licensing information](LICENSE), as well as
-[pre-commit hooks](https://pre-commit.com) and
-[GitHub Actions](https://github.com/features/actions) configurations
-appropriate for an Ansible role.
+This Ansible role adds the [Debian
+Archive](https://archive.debian.org/debian/) [package
+repositories](https://archive.debian.org/README) for supported Debian
+releases and removes the standard Debian package repositories.  It is
+intended for use with Debian releases that are no longer supported.
+
+> [!IMPORTANT]
+> When required, this Ansible role must be applied *before*
+> [cisagov/ansible-role-upgrade](https://github.com/cisagov/ansible-role-upgrade)
+> or any other Ansible code that downloads packages.
 
 ## Requirements ##
 
@@ -17,14 +20,9 @@ None.
 
 ## Role Variables ##
 
-None.
-
-<!--
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| optional_variable | Describe its purpose. | `default_value` | No |
-| required_variable | Describe its purpose. | n/a | Yes |
--->
+| debian\_archive\_update\_cache | Whether the package cache should be updated after adding the archive repositories. | `true` | No |
 
 ## Dependencies ##
 
@@ -42,7 +40,7 @@ where `requirements.yml` looks like:
 
 ```yaml
 ---
-- name: skeleton
+- name: debian_archive
   src: https://github.com/cisagov/ansible-role-debian-archive
 ```
 
@@ -61,17 +59,10 @@ Here's how to use it in a playbook:
   become: true
   become_method: sudo
   tasks:
-    - name: Include skeleton
+    - name: Include Debian Archive
       ansible.builtin.include_role:
-        name: skeleton
+        name: debian_archive
 ```
-
-## New Repositories from a Skeleton ##
-
-Please see our [Project Setup guide](https://github.com/cisagov/development-guide/tree/develop/project_setup)
-for step-by-step instructions on how to start a new repository from
-a skeleton. This will save you time and effort when configuring a
-new repository!
 
 ## Contributing ##
 
@@ -93,4 +84,4 @@ with this waiver of copyright interest.
 
 ## Author Information ##
 
-First Last - <first.last@gwe.cisa.dhs.gov>
+Shane Frasier - <jeremy.frasier@gwe.cisa.dhs.gov>

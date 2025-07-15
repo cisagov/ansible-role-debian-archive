@@ -44,6 +44,8 @@
     - name: Include ansible-role-debian-archive
       ansible.builtin.include_role:
         name: ansible-role-debian-archive
+      vars:
+        debian_archive_update_cache: false
 
 - name: Import upgrade playbook
   ansible.builtin.import_playbook: upgrade.yml
