@@ -17,7 +17,7 @@ def test_archive(host):
     codename = host.system_info.codename
 
     supported_distributions = ["debian"]
-    # List any unsupported releases here
+    # List all supported releases here
     supported_releases = ["buster"]
 
     # The archive package repos should be present for any Debian release
