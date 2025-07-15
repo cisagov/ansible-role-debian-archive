@@ -9,8 +9,8 @@ repositories](https://archive.debian.org/README) for supported Debian
 releases and removes the standard Debian package repositories.  It is
 intended for use with Debian releases that are no longer supported.
 
-> [!IMPORTANT] When required, this Ansible role must be applied
-> *before*
+> [!IMPORTANT]
+> When required, this Ansible role must be applied *before*
 > [cisagov/ansible-role-upgrade](https://github.com/cisagov/ansible-role-upgrade)
 > or any other Ansible code that downloads packages.
 
