@@ -1,6 +1,7 @@
 # ansible-role-debian-archive #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-debian-archive/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-debian-archive/actions)
+[![License](https://img.shields.io/github/license/cisagov/ansible-role-debian-archive)](https://spdx.org/licenses/)
 [![CodeQL](https://github.com/cisagov/ansible-role-debian-archive/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-debian-archive/actions/workflows/codeql-analysis.yml)
 
 This Ansible role adds the [Debian
