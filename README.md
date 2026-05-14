@@ -22,7 +22,7 @@ None.
 ## Role Variables ##
 
 | Variable | Description | Default | Required |
-|----------|-------------|---------|----------|
+| -------- | ----------- | ------- | -------- |
 | debian\_archive\_update\_cache | Whether the package cache should be updated after adding the archive repositories. | `true` | No |
 
 ## Dependencies ##
