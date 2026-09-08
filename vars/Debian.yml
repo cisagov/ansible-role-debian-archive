@@ -7,6 +7,5 @@ source_list_entries:
   # details about that.
   - deb http://archive.debian.org/debian-security %s-updates main
 
-# The Debian releases for which we must use archive repositories
-supported_releases:
-  - buster
+# The Debian releases for which we must use these archive repositories
+supported_releases: []
