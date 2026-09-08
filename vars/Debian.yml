@@ -2,7 +2,10 @@
 source_list_entries:
   - deb http://archive.debian.org/debian %s main
   - deb http://archive.debian.org/debian %s-updates main
-  - deb http://archive.debian.org/debian-security %s/updates main
+  # Note that the format of the security entry has changed slightly.
+  # See https://forums.debian.net/viewtopic.php?t=151142 for more
+  # details about that.
+  - deb http://archive.debian.org/debian-security %s-updates main
 
 # The Debian releases for which we must use archive repositories
 supported_releases:
