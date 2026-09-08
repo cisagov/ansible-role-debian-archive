@@ -18,7 +18,7 @@ def test_archive(host):
 
     supported_distributions = ["debian"]
     # List all supported releases here
-    supported_releases = ["buster"]
+    supported_releases = ["buster", "bullseye"]
 
     # The archive package repos should be present for any Debian release
     # found in supported_releases.
